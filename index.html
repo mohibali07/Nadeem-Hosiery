@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nadeem Hosiery — Engineered Mesh & Spandex Fabrics for Sportswear | Sialkot, Pakistan</title>
+  <meta name="description" content="Nadeem Hosiery manufactures export-grade mesh knitted fabrics, spandex blends, and athletic interlock textiles from Sialkot, Pakistan since 1998. Custom GSM, yarn count, and spandex ratio engineering for global sportswear brands." />
+  <meta name="keywords" content="mesh fabric manufacturer, spandex fabric Sialkot, athletic fabric exporter, birdseye mesh, interlock dry-fit, knitted fabric Pakistan, sportswear fabric supplier" />
+  <meta name="author" content="Nadeem Hosiery" />
+  <meta property="og:title" content="Nadeem Hosiery — Engineered Mesh & Spandex Fabrics for Sportswear" />
+  <meta property="og:description" content="Export-grade knitted textiles with exact yarn count precision, custom GSM density, and four-way stretch durability. Direct from Sialkot." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F172A',
+            accent: '#F59E0B',
+            'accent-hover': '#D97706',
+            'neutral-bg': '#F8FAFC',
+            'card-bg': '#FFFFFF',
+            'dark-surface': '#020617',
+          },
+          fontFamily: {
+            headline: ['Syne', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* Base resets & scroll-reveal */
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #0F172A; }
+
+    /* Scroll-reveal initial state */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered reveal delays */
+    .reveal-delay-1 { transition-delay: 100ms; }
+    .reveal-delay-2 { transition-delay: 200ms; }
+    .reveal-delay-3 { transition-delay: 300ms; }
+    .reveal-delay-4 { transition-delay: 400ms; }
+
+    /* Card hover lift */
+    .card-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+    }
+
+    /* CTA button glow */
+    .btn-glow {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    }
+    .btn-glow:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+    }
+
+    /* FAQ accordion */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-answer.open {
+      max-height: 300px;
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-icon.rotated {
+      transform: rotate(45deg);
+    }
+
+    /* Navbar transition */
+    #navbar {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+    }
+    #navbar.scrolled {
+      background-color: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Weave logo mark */
+    .weave-mark {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      position: relative;
+    }
+    .weave-mark::before,
+    .weave-mark::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #F59E0B;
+      border-radius: 2px;
+    }
+    .weave-mark::before {
+      transform: rotate(45deg) scale(0.7);
+    }
+    .weave-mark::after {
+      transform: rotate(0deg) scale(0.7);
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+
+    /* Spec badge tag styles */
+    .spec-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.03em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      color: #475569;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Custom range slider styling */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: #E2E8F0;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #F59E0B;
+      cursor: pointer;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #F59E0B;
+      cursor: pointer;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* Focus styles for accessibility */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+    }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #mobile-menu.hidden {
+      transform: translateY(-8px);
+      opacity: 0;
+      pointer-events: none;
+    }
+    #mobile-menu:not(.hidden) {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Hero mesh overlay pattern */
+    .mesh-pattern {
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(245,158,11,0.12) 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+
+    /* Form submit success animation */
+    .form-success {
+      animation: successPulse 0.5s ease;
+    }
+    @keyframes successPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    /* Floating WhatsApp bar for mobile */
+    .whatsapp-float {
+      animation: floatPulse 2s ease-in-out infinite;
+    }
+    @keyframes floatPulse {
+      0%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3); }
+      50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.5); }
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-bg antialiased">
+
+  <!-- =========================================
+       1. STICKY NAVIGATION BAR
+       ========================================= -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-primary/95">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-18">
+        <!-- Brand -->
+        <a href="#" class="flex items-center gap-2.5 group" aria-label="Nadeem Hosiery Home">
+          <span class="weave-mark" aria-hidden="true"></span>
+          <span class="font-headline text-lg sm:text-xl font-800 text-white tracking-tight">
+            NADEEM <span class="text-accent">HOSIERY</span>
+          </span>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden lg:flex items-center gap-7">
+          <a href="#products" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Products</a>
+          <a href="#specs" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Technical Specs</a>
+          <a href="#process" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Sourcing Process</a>
+          <a href="#trust" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Why Us</a>
+          <a href="#faq" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">FAQs</a>
+        </div>
+
+        <!-- Desktop CTAs -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="https://wa.me/923117743200" target="_blank" rel="noopener"
+             class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-600 text-slate-200 hover:border-accent hover:text-accent text-sm font-medium transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Sourcing
+          </a>
+          <a href="#contact" class="btn-glow px-5 py-2.5 rounded-lg bg-accent hover:bg-accent-hover text-primary text-sm font-semibold transition-all">
+            Request Fabric Swatches
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="lg:hidden text-white p-2" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-primary/98 border-t border-slate-800">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#products" class="block text-slate-300 hover:text-white text-sm font-medium py-2 mobile-nav-link">Products</a>
+        <a href="#specs" class="block text-slate-300 hover:text-white text-sm font-medium py-2 mobile-nav-link">Technical Specs</a>
+        <a href="#process" class="block text-slate-300 hover:text-white text-sm font-medium py-2 mobile-nav-link">Sourcing Process</a>
+        <a href="#trust" class="block text-slate-300 hover:text-white text-sm font-medium py-2 mobile-nav-link">Why Us</a>
+        <a href="#faq" class="block text-slate-300 hover:text-white text-sm font-medium py-2 mobile-nav-link">FAQs</a>
+        <div class="pt-3 border-t border-slate-800 flex flex-col gap-3">
+          <a href="https://wa.me/923117743200" target="_blank" rel="noopener"
+             class="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-slate-600 text-slate-200 text-sm font-medium">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Sourcing
+          </a>
+          <a href="#contact" class="btn-glow text-center px-4 py-2.5 rounded-lg bg-accent hover:bg-accent-hover text-primary text-sm font-semibold">
+            Request Fabric Swatches
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- =========================================
+       2. HERO SECTION
+       ========================================= -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-16 overflow-hidden bg-dark-surface">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="assets/images/hero-fabric.jpg" alt="Circular knitting machine manufacturing mesh fabric at Nadeem Hosiery factory" class="w-full h-full object-cover opacity-40" />
+      <div class="absolute inset-0 bg-gradient-to-r from-dark-surface via-dark-surface/90 to-dark-surface/60"></div>
+      <div class="absolute inset-0 mesh-pattern"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left: Content -->
+        <div>
+          <!-- Badge -->
+          <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/25 mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <span class="text-accent text-xs sm:text-sm font-medium">Sialkot's Premier Mesh & Sportswear Fabric Mill — Since 1998</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="reveal reveal-delay-1 font-headline text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem] font-800 text-white leading-tight mb-5">
+            Engineered Mesh & Spandex Fabrics for 
+            <span class="text-accent">High-Performance Sportswear</span> Brands.
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="reveal reveal-delay-2 text-slate-400 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+            Export-grade knitted textiles with exact yarn count precision, custom GSM density, and four-way stretch durability. Direct from Sialkot to global apparel manufacturers.
+          </p>
+
+          <!-- CTAs -->
+          <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-3 mb-10">
+            <a href="#contact" class="btn-glow inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-accent hover:bg-accent-hover text-primary font-semibold text-sm sm:text-base transition-all">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-2.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/></svg>
+              Request Fabric Swatch Kit
+            </a>
+            <a href="https://wa.me/923117743200" target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-slate-600 text-slate-200 hover:border-green-500 hover:text-green-400 font-medium text-sm sm:text-base transition-all">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Chat on WhatsApp (+92 311 7743200)
+            </a>
+          </div>
+
+          <!-- Trust signal -->
+          <div class="reveal reveal-delay-4 flex flex-wrap items-center gap-4 text-sm text-slate-400">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              5.0 ★ Rated
+            </span>
+            <span class="w-px h-4 bg-slate-700"></span>
+            <span>Direct Factory Sourcing</span>
+            <span class="w-px h-4 bg-slate-700"></span>
+            <span>Custom Knitting & Dyeing</span>
+          </div>
+        </div>
+
+        <!-- Right: Visual Grid -->
+        <div class="reveal hidden lg:block relative">
+          <div class="relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl">
+            <img src="assets/images/birdseye-mesh.jpg" alt="Birdseye mesh fabric macro close-up showing breathable knit construction" class="w-full h-80 object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-surface/80 to-transparent"></div>
+            <!-- Technical Spec Badge -->
+            <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-md bg-primary/90 border border-slate-700 text-xs text-slate-300 font-mono">
+                GSM Range: 110–280
+              </span>
+              <span class="px-3 py-1.5 rounded-md bg-primary/90 border border-slate-700 text-xs text-slate-300 font-mono">
+                Spandex Ratio: 5%–20%
+              </span>
+              <span class="px-3 py-1.5 rounded-md bg-accent/90 text-xs text-primary font-semibold font-mono">
+                CUSTOM ENGINEERING
+              </span>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute -top-4 -right-4 bg-accent text-primary px-4 py-2 rounded-lg shadow-lg">
+            <span class="font-headline font-700 text-sm">Since 1998</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       3. CREDENTIALS & TRUST BAR
+       ========================================= -->
+  <section id="trust" class="relative bg-primary py-14 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <!-- Metric 1 -->
+        <div class="reveal text-center lg:text-left">
+          <div class="flex items-center justify-center lg:justify-start gap-3 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="font-headline text-2xl sm:text-3xl font-800 text-white counter" data-target="25" data-suffix="+">0+</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 font-medium">Years Technical Knitting Expertise</p>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="reveal reveal-delay-1 text-center lg:text-left">
+          <div class="flex items-center justify-center lg:justify-start gap-3 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <span class="font-headline text-2xl sm:text-3xl font-800 text-white counter" data-target="100" data-suffix="%">0%</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 font-medium">Custom Yarn, Spandex & GSM Formulations</p>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="reveal reveal-delay-2 text-center lg:text-left">
+          <div class="flex items-center justify-center lg:justify-start gap-3 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="font-headline text-2xl sm:text-3xl font-800 text-white">Sialkot</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 font-medium">Export Hub — Global Shipping & Port Logistics</p>
+        </div>
+
+        <!-- Metric 4 -->
+        <div class="reveal reveal-delay-3 text-center lg:text-left">
+          <div class="flex items-center justify-center lg:justify-start gap-3 mb-2">
+            <div class="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <span class="font-headline text-2xl sm:text-3xl font-800 text-white counter" data-target="5" data-suffix=".0 ★" data-decimal="true">0.0 ★</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 font-medium">Verified B2B Buyer Quality Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       4. PRODUCT SHOWCASE GRID (TECHNICAL FABRIC CATALOG)
+       ========================================= -->
+  <section id="products" class="py-20 sm:py-24 bg-neutral-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-14 reveal">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase mb-4">
+          Technical Fabric Catalog
+        </span>
+        <h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-800 text-primary mb-4">
+          Precision Knitted Fabrics Engineered for Athletics
+        </h2>
+        <p class="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto">
+          Explore our core fabric constructions built for activewear, teamwear, and athletic garments.
+        </p>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Card 1: Birdseye Mesh -->
+        <div class="reveal card-lift bg-card-bg rounded-xl border border-slate-200/80 overflow-hidden group">
+          <div class="relative overflow-hidden">
+            <img src="assets/images/birdseye-mesh.jpg" alt="Birdseye breathable mesh fabric close-up for jersey panels and moisture wicking" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="px-2.5 py-1 rounded-md bg-primary/85 text-white text-xs font-semibold">Mesh</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-headline text-base font-700 text-primary mb-1.5">Birdseye Breathable Mesh</h3>
+            <p class="text-slate-500 text-xs mb-3 leading-relaxed">Ideal for jersey panels & moisture wicking applications in athletic tops.</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="spec-tag">100% Polyester</span>
+              <span class="spec-tag">110–160 GSM</span>
+              <span class="spec-tag">58–60″</span>
+              <span class="spec-tag">★★★★★ Wicking</span>
+            </div>
+            <a href="#contact" class="flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-semibold transition-colors">
+              Inquire Details
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Spandex Mesh -->
+        <div class="reveal reveal-delay-1 card-lift bg-card-bg rounded-xl border border-slate-200/80 overflow-hidden group">
+          <div class="relative overflow-hidden">
+            <img src="assets/images/spandex-mesh.jpg" alt="Four-way stretch spandex mesh fabric being stretched showing elasticity" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="px-2.5 py-1 rounded-md bg-accent/90 text-primary text-xs font-semibold">Spandex</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-headline text-base font-700 text-primary mb-1.5">Four-Way Stretch Spandex Mesh</h3>
+            <p class="text-slate-500 text-xs mb-3 leading-relaxed">Ideal for compression wear & cycling apparel with superior recovery.</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="spec-tag">Poly 82% / Spandex 18%</span>
+              <span class="spec-tag">140–200 GSM</span>
+              <span class="spec-tag">56–58″</span>
+              <span class="spec-tag">★★★★★ Stretch</span>
+            </div>
+            <a href="#contact" class="flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-semibold transition-colors">
+              Inquire Details
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Interlock Dry-Fit -->
+        <div class="reveal reveal-delay-2 card-lift bg-card-bg rounded-xl border border-slate-200/80 overflow-hidden group">
+          <div class="relative overflow-hidden">
+            <img src="assets/images/interlock-dryfit.jpg" alt="Athletic interlock dry-fit performance fabric with moisture droplets" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="px-2.5 py-1 rounded-md bg-primary/85 text-white text-xs font-semibold">Interlock</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-headline text-base font-700 text-primary mb-1.5">Athletic Interlock Dry-Fit</h3>
+            <p class="text-slate-500 text-xs mb-3 leading-relaxed">Ideal for training shirts & performance tees with smooth hand feel.</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="spec-tag">Poly 92% / Spandex 8%</span>
+              <span class="spec-tag">160–220 GSM</span>
+              <span class="spec-tag">58–62″</span>
+              <span class="spec-tag">★★★★☆ Wicking</span>
+            </div>
+            <a href="#contact" class="flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-semibold transition-colors">
+              Inquire Details
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4: Poly-Spandex Rib -->
+        <div class="reveal reveal-delay-3 card-lift bg-card-bg rounded-xl border border-slate-200/80 overflow-hidden group">
+          <div class="relative overflow-hidden">
+            <img src="assets/images/polyspandex-rib.jpg" alt="Heavyweight poly-spandex rib knit fabric showing vertical ribbed texture" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="px-2.5 py-1 rounded-md bg-primary/85 text-white text-xs font-semibold">Rib Knit</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-headline text-base font-700 text-primary mb-1.5">Heavyweight Poly-Spandex Rib</h3>
+            <p class="text-slate-500 text-xs mb-3 leading-relaxed">Ideal for cuffs, collars & sport jacket trim with heavy body.</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="spec-tag">Poly 85% / Spandex 15%</span>
+              <span class="spec-tag">220–280 GSM</span>
+              <span class="spec-tag">40–44″</span>
+              <span class="spec-tag">★★★★★ Durability</span>
+            </div>
+            <a href="#contact" class="flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-semibold transition-colors">
+              Inquire Details
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       5. ENGINEERED CUSTOMIZATION & COSTING FEATURE
+       ========================================= -->
+  <section id="specs" class="py-20 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left: Content -->
+        <div class="reveal">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase mb-4">
+            Fabric Engineering
+          </span>
+          <h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-800 text-primary mb-4">
+            Custom Yarn Costing & Fabric Specification System
+          </h2>
+          <p class="text-slate-500 text-base sm:text-lg leading-relaxed mb-6">
+            Every fabric we manufacture begins with your exact specifications. Our in-house Yarn & Spandex Costing system calculates transparent bulk pricing based on your desired yarn count, spandex percentage, and target GSM weight.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-primary mb-0.5">Yarn Count Selection</h4>
+                <p class="text-xs text-slate-500">Choose from 20s/1 through 60s/1 single-ply counts for precise fabric hand feel.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-primary mb-0.5">Spandex Ratio Tuning</h4>
+                <p class="text-xs text-slate-500">Engineer 5% to 18% spandex integration for optimal stretch and recovery.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-primary mb-0.5">Transparent Bulk Pricing</h4>
+                <p class="text-xs text-slate-500">Real-time cost calculation based on yarn market rates, spandex grade, and GSM density.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Spec Customizer -->
+        <div class="reveal reveal-delay-1">
+          <div class="bg-neutral-bg rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+            <div class="flex items-center gap-2 mb-6">
+              <div class="w-2 h-2 rounded-full bg-green-500"></div>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Live Spec Configurator</span>
+            </div>
+
+            <!-- Yarn Count Slider -->
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-2">
+                <label for="yarn-slider" class="text-sm font-semibold text-primary">Yarn Count</label>
+                <span id="yarn-value" class="text-sm font-mono font-semibold text-accent">30s/1</span>
+              </div>
+              <input type="range" id="yarn-slider" min="20" max="60" value="30" step="5" class="w-full" aria-label="Select yarn count" />
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>20s/1</span>
+                <span>40s/1</span>
+                <span>60s/1</span>
+              </div>
+            </div>
+
+            <!-- Spandex Ratio Slider -->
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-2">
+                <label for="spandex-slider" class="text-sm font-semibold text-primary">Spandex Ratio</label>
+                <span id="spandex-value" class="text-sm font-mono font-semibold text-accent">10%</span>
+              </div>
+              <input type="range" id="spandex-slider" min="5" max="18" value="10" step="1" class="w-full" aria-label="Select spandex ratio" />
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>5%</span>
+                <span>12%</span>
+                <span>18%</span>
+              </div>
+            </div>
+
+            <!-- GSM Weight Slider -->
+            <div class="mb-8">
+              <div class="flex items-center justify-between mb-2">
+                <label for="gsm-slider" class="text-sm font-semibold text-primary">GSM Weight</label>
+                <span id="gsm-value" class="text-sm font-mono font-semibold text-accent">180 GSM</span>
+              </div>
+              <input type="range" id="gsm-slider" min="120" max="250" value="180" step="10" class="w-full" aria-label="Select GSM weight" />
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>120g</span>
+                <span>180g</span>
+                <span>250g</span>
+              </div>
+            </div>
+
+            <!-- Spec Summary -->
+            <div class="bg-white rounded-xl border border-slate-200 p-4 mb-5">
+              <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Your Fabric Specification</h4>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="text-center">
+                  <span class="block text-lg font-headline font-700 text-primary" id="summary-yarn">30s/1</span>
+                  <span class="text-xs text-slate-400">Yarn Count</span>
+                </div>
+                <div class="text-center border-x border-slate-100">
+                  <span class="block text-lg font-headline font-700 text-primary" id="summary-spandex">10%</span>
+                  <span class="text-xs text-slate-400">Spandex</span>
+                </div>
+                <div class="text-center">
+                  <span class="block text-lg font-headline font-700 text-primary" id="summary-gsm">180g</span>
+                  <span class="text-xs text-slate-400">GSM</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn-glow w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent hover:bg-accent-hover text-primary font-semibold text-sm transition-all">
+              Get Pricing for This Spec
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       6. B2B SOURCING WORKFLOW (3-STEP PROCESS)
+       ========================================= -->
+  <section id="process" class="py-20 sm:py-24 bg-neutral-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-14 reveal">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase mb-4">
+          Sourcing Process
+        </span>
+        <h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-800 text-primary mb-4">
+          From Spec to Shipment in Three Steps
+        </h2>
+        <p class="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto">
+          Our streamlined B2B sourcing workflow ensures quality-verified fabric reaches your factory floor on schedule.
+        </p>
+      </div>
+
+      <!-- Steps -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="reveal relative">
+          <div class="bg-card-bg rounded-xl border border-slate-200/80 p-6 sm:p-8 h-full">
+            <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5">
+              <span class="font-headline text-xl font-800 text-accent">01</span>
+            </div>
+            <h3 class="font-headline text-lg font-700 text-primary mb-2">Spec Submission & Sample Request</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Select from our fabric catalog or send a reference sample. Share your required GSM, composition, width, and color specifications through WhatsApp or our inquiry form.
+            </p>
+          </div>
+          <!-- Connector (hidden on mobile) -->
+          <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-slate-300" aria-hidden="true"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="reveal reveal-delay-1 relative">
+          <div class="bg-card-bg rounded-xl border border-slate-200/80 p-6 sm:p-8 h-full">
+            <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5">
+              <span class="font-headline text-xl font-800 text-accent">02</span>
+            </div>
+            <h3 class="font-headline text-lg font-700 text-primary mb-2">Lab Dip & Counter-Sample Approval</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              We produce lab dip samples for exact color swatch matching and GSM validation. Counter-samples are dispatched for your approval before bulk production begins.
+            </p>
+          </div>
+          <div class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-slate-300" aria-hidden="true"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="reveal reveal-delay-2">
+          <div class="bg-card-bg rounded-xl border border-slate-200/80 p-6 sm:p-8 h-full">
+            <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5">
+              <span class="font-headline text-xl font-800 text-accent">03</span>
+            </div>
+            <h3 class="font-headline text-lg font-700 text-primary mb-2">Bulk Circular Knitting & Export Dispatch</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Your approved specifications enter our circular knitting production line. Quality inspection, finishing, and door-to-port shipment logistics are managed end-to-end.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       7. FREQUENTLY ASKED QUESTIONS (ACCORDION)
+       ========================================= -->
+  <section id="faq" class="py-20 sm:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12 reveal">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase mb-4">
+          FAQs
+        </span>
+        <h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-800 text-primary mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-slate-500 text-base sm:text-lg">
+          Answers for sourcing managers and fabric procurement teams.
+        </p>
+      </div>
+
+      <!-- Accordion -->
+      <div class="space-y-3">
+        <!-- FAQ 1 -->
+        <div class="reveal faq-item bg-neutral-bg rounded-xl border border-slate-200/80 overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-sm sm:text-base text-primary pr-4">What is the Minimum Order Quantity (MOQ) for custom fabric dyeing?</span>
+            <span class="faq-icon text-accent text-2xl font-light flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <p class="text-slate-500 text-sm leading-relaxed pb-5">
+              Our standard MOQ for custom-dyed fabric rolls is 200 kg per color per fabric type. For first-time sampling orders, we accommodate smaller trial quantities of 50–100 kg to help you validate color, GSM, and hand-feel before committing to a full production run. Contact us via WhatsApp for specific MOQ discussions based on your fabric construction.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="reveal reveal-delay-1 faq-item bg-neutral-bg rounded-xl border border-slate-200/80 overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-sm sm:text-base text-primary pr-4">Can you manufacture custom spandex ratios and GSM weights?</span>
+            <span class="faq-icon text-accent text-2xl font-light flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <p class="text-slate-500 text-sm leading-relaxed pb-5">
+              Yes, this is our core specialization. We engineer fabrics with spandex ratios ranging from 5% to 18% and GSM weights from 110 to 280. Our Yarn & Spandex Costing system allows precise formulation of your desired fabric specs. Whether you need a lightweight 120 GSM mesh with 5% spandex or a heavyweight 250 GSM interlock with 15% spandex, our circular knitting machines are configured to your exact specifications.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="reveal reveal-delay-2 faq-item bg-neutral-bg rounded-xl border border-slate-200/80 overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-sm sm:text-base text-primary pr-4">How fast can fabric sample swatches be dispatched to international buyers?</span>
+            <span class="faq-icon text-accent text-2xl font-light flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <p class="text-slate-500 text-sm leading-relaxed pb-5">
+              Standard fabric swatches from our existing range are dispatched within 2–3 business days via DHL/FedEx international courier from Sialkot. Custom lab dip samples (with specific color matching and GSM validation) typically require 7–10 working days for preparation before dispatch. We provide full tracking details and coordinate with your logistics team for door delivery.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="reveal reveal-delay-3 faq-item bg-neutral-bg rounded-xl border border-slate-200/80 overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-sm sm:text-base text-primary pr-4">Do you support both raw fabric rolls and finished knitted trims?</span>
+            <span class="faq-icon text-accent text-2xl font-light flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-5">
+            <p class="text-slate-500 text-sm leading-relaxed pb-5">
+              Absolutely. We supply both open-width and tubular raw fabric rolls for garment cutting factories, as well as finished knitted trims including rib cuffs, collars, and waistband strips. Our heavyweight poly-spandex rib is specifically engineered for sportswear trim applications. All products can be shipped as greige (undyed), piece-dyed, or yarn-dyed based on your production requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       8. HIGH-CONVERSION FINAL CTA & INQUIRY FORM
+       ========================================= -->
+  <section id="contact" class="py-20 sm:py-24 bg-dark-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Left: Contact Details -->
+        <div class="reveal">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase mb-4">
+            Direct Factory Access
+          </span>
+          <h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-800 text-white mb-4">
+            Start Your Fabric Sourcing Inquiry
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg leading-relaxed mb-8">
+            Connect directly with our fabric engineering team. No middlemen, no markups — direct factory pricing from Sialkot.
+          </p>
+
+          <div class="space-y-5 mb-8">
+            <!-- Address -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-white mb-0.5">Factory Address</h4>
+                <p class="text-sm text-slate-400">Masjid Al Habib St, Shahabpura,<br />Sialkot, Punjab, Pakistan</p>
+              </div>
+            </div>
+
+            <!-- Phone/WhatsApp -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-white mb-0.5">Phone / WhatsApp</h4>
+                <a href="https://wa.me/923117743200" target="_blank" rel="noopener" class="text-sm text-accent hover:text-accent-hover transition-colors">+92 311 7743200</a>
+              </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-white mb-0.5">Instagram</h4>
+                <a href="https://instagram.com/nadeemhosiery" target="_blank" rel="noopener" class="text-sm text-accent hover:text-accent-hover transition-colors">@nadeemhosiery</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Direct CTA -->
+          <a href="https://wa.me/923117743200" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold text-sm transition-all">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat Directly on WhatsApp
+          </a>
+        </div>
+
+        <!-- Right: Inquiry Form -->
+        <div class="reveal reveal-delay-1">
+          <div class="bg-white/5 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-6 sm:p-8">
+            <h3 class="font-headline text-xl font-700 text-white mb-6">B2B Sourcing Inquiry</h3>
+
+            <form id="inquiry-form" class="space-y-4" novalidate>
+              <!-- Full Name -->
+              <div>
+                <label for="form-name" class="block text-xs font-semibold text-slate-400 mb-1.5">Full Name *</label>
+                <input type="text" id="form-name" name="name" required placeholder="Your full name"
+                       class="w-full px-4 py-2.5 rounded-lg bg-white/8 border border-slate-700 text-white text-sm placeholder-slate-500 focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+              </div>
+
+              <!-- Company -->
+              <div>
+                <label for="form-company" class="block text-xs font-semibold text-slate-400 mb-1.5">Company / Apparel Brand Name</label>
+                <input type="text" id="form-company" name="company" placeholder="Your company or brand"
+                       class="w-full px-4 py-2.5 rounded-lg bg-white/8 border border-slate-700 text-white text-sm placeholder-slate-500 focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+              </div>
+
+              <!-- WhatsApp / Email -->
+              <div>
+                <label for="form-contact" class="block text-xs font-semibold text-slate-400 mb-1.5">WhatsApp / Email *</label>
+                <input type="text" id="form-contact" name="contact" required placeholder="WhatsApp number or email address"
+                       class="w-full px-4 py-2.5 rounded-lg bg-white/8 border border-slate-700 text-white text-sm placeholder-slate-500 focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+              </div>
+
+              <!-- Fabric Type Dropdown -->
+              <div>
+                <label for="form-fabric" class="block text-xs font-semibold text-slate-400 mb-1.5">Fabric Type Needed</label>
+                <select id="form-fabric" name="fabric"
+                        class="w-full px-4 py-2.5 rounded-lg bg-white/8 border border-slate-700 text-white text-sm focus:border-accent focus:ring-1 focus:ring-accent transition-all">
+                  <option value="" class="bg-dark-surface">Select fabric type</option>
+                  <option value="birdseye-mesh" class="bg-dark-surface">Birdseye Breathable Mesh</option>
+                  <option value="spandex-mesh" class="bg-dark-surface">Four-Way Stretch Spandex Mesh</option>
+                  <option value="interlock-dryfit" class="bg-dark-surface">Athletic Interlock Dry-Fit</option>
+                  <option value="polyspandex-rib" class="bg-dark-surface">Heavyweight Poly-Spandex Rib</option>
+                  <option value="custom" class="bg-dark-surface">Custom Specification</option>
+                </select>
+              </div>
+
+              <!-- Estimated Volume -->
+              <div>
+                <label for="form-volume" class="block text-xs font-semibold text-slate-400 mb-1.5">Estimated Order Volume (Kg/Yards)</label>
+                <input type="text" id="form-volume" name="volume" placeholder="e.g., 500 kg or 1000 yards"
+                       class="w-full px-4 py-2.5 rounded-lg bg-white/8 border border-slate-700 text-white text-sm placeholder-slate-500 focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label for="form-message" class="block text-xs font-semibold text-slate-400 mb-1.5">Message / Specifications</label>
+                <textarea id="form-message" name="message" rows="3" placeholder="Describe your fabric requirements, GSM, color, or reference details..."
+                          class="w-full px-4 py-2.5 rounded-lg bg-white/8 border border-slate-700 text-white text-sm placeholder-slate-500 focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" id="submit-btn"
+                      class="btn-glow w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-accent hover:bg-accent-hover text-primary font-semibold text-sm transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                <span id="submit-text">Submit Sourcing Inquiry</span>
+              </button>
+            </form>
+
+            <!-- Success Message (hidden initially) -->
+            <div id="form-success" class="hidden mt-4 p-4 rounded-lg bg-green-600/15 border border-green-600/30 text-center">
+              <svg class="w-8 h-8 text-green-500 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <h4 class="text-white font-semibold text-sm mb-1">Inquiry Submitted Successfully!</h4>
+              <p class="text-slate-400 text-xs">Our team will respond within 24 hours via WhatsApp or email.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       9. FOOTER
+       ========================================= -->
+  <footer class="bg-primary border-t border-slate-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <!-- Brand -->
+        <div>
+          <a href="#" class="flex items-center gap-2.5 mb-4">
+            <span class="weave-mark" aria-hidden="true"></span>
+            <span class="font-headline text-lg font-800 text-white tracking-tight">
+              NADEEM <span class="text-accent">HOSIERY</span>
+            </span>
+          </a>
+          <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+            Manufacturers and exporters of precision-engineered mesh knitted fabrics, spandex blends, and athletic interlock textiles since 1998. Sialkot, Pakistan.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#products" class="text-slate-400 hover:text-accent text-sm transition-colors">Fabric Catalog</a></li>
+            <li><a href="#specs" class="text-slate-400 hover:text-accent text-sm transition-colors">Custom Specifications</a></li>
+            <li><a href="#process" class="text-slate-400 hover:text-accent text-sm transition-colors">Sourcing Process</a></li>
+            <li><a href="#faq" class="text-slate-400 hover:text-accent text-sm transition-colors">FAQs</a></li>
+            <li><a href="#contact" class="text-slate-400 hover:text-accent text-sm transition-colors">Contact & Inquiry</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Location -->
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Factory Location</h4>
+          <p class="text-slate-400 text-sm mb-3">
+            Masjid Al Habib St, Shahabpura,<br />
+            Sialkot, Punjab, Pakistan
+          </p>
+          <a href="https://wa.me/923117743200" target="_blank" rel="noopener" class="text-accent hover:text-accent-hover text-sm font-medium transition-colors">
+            +92 311 7743200 (WhatsApp)
+          </a>
+          <div class="mt-4">
+            <a href="https://instagram.com/nadeemhosiery" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-slate-400 hover:text-accent text-sm transition-colors" aria-label="Follow Nadeem Hosiery on Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @nadeemhosiery
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-slate-500 text-xs">
+          &copy; 1998–2026 Nadeem Hosiery. All rights reserved.
+        </p>
+        <div class="flex items-center gap-2 text-xs text-slate-500">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Sialkot, Pakistan
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- =========================================
+       FLOATING WHATSAPP CTA (MOBILE)
+       ========================================= -->
+  <div id="whatsapp-float" class="fixed bottom-4 left-4 right-4 z-50 lg:hidden">
+    <a href="https://wa.me/923117743200" target="_blank" rel="noopener"
+       class="whatsapp-float flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-green-600 text-white font-semibold text-sm shadow-xl">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Sourcing — +92 311 7743200
+    </a>
+  </div>
+
+
+  <!-- =========================================
+       JAVASCRIPT: Scroll reveal, counters, FAQ, nav, sliders
+       ========================================= -->
+  <script>
+    (function() {
+      'use strict';
+
+      // ── Sticky Navbar scroll effect ──
+      const navbar = document.getElementById('navbar');
+      function handleNavScroll() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', handleNavScroll, { passive: true });
+
+      // ── Mobile menu toggle ──
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      menuBtn.addEventListener('click', function() {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        if (isOpen) {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Close mobile menu on nav link click
+      document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // ── IntersectionObserver: Scroll Reveal ──
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(function(el) {
+        revealObserver.observe(el);
+      });
+
+      // ── Animated Counters ──
+      const counters = document.querySelectorAll('.counter');
+      let countersAnimated = false;
+
+      function animateCounters() {
+        if (countersAnimated) return;
+        countersAnimated = true;
+
+        counters.forEach(function(counter) {
+          var target = parseInt(counter.getAttribute('data-target'), 10);
+          var suffix = counter.getAttribute('data-suffix') || '';
+          var isDecimal = counter.getAttribute('data-decimal') === 'true';
+          var duration = 1800;
+          var startTime = null;
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            // Ease-out cubic
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.floor(eased * target);
+
+            if (isDecimal) {
+              counter.textContent = (eased * target).toFixed(1) + suffix.replace(/^[\d.]+/, '');
+            } else {
+              counter.textContent = current + suffix;
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              if (isDecimal) {
+                counter.textContent = target.toFixed(1) + suffix.replace(/^[\d.]+/, '');
+              } else {
+                counter.textContent = target + suffix;
+              }
+            }
+          }
+
+          requestAnimationFrame(step);
+        });
+      }
+
+      var counterSection = document.getElementById('trust');
+      var counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCounters();
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      counterObserver.observe(counterSection);
+
+      // ── FAQ Accordion ──
+      document.querySelectorAll('.faq-toggle').forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+          var parent = this.closest('.faq-item');
+          var answer = parent.querySelector('.faq-answer');
+          var icon = this.querySelector('.faq-icon');
+          var isOpen = answer.classList.contains('open');
+
+          // Close all others
+          document.querySelectorAll('.faq-item').forEach(function(item) {
+            var a = item.querySelector('.faq-answer');
+            var i = item.querySelector('.faq-icon');
+            var t = item.querySelector('.faq-toggle');
+            a.classList.remove('open');
+            i.classList.remove('rotated');
+            t.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle current
+          if (!isOpen) {
+            answer.classList.add('open');
+            icon.classList.add('rotated');
+            this.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // ── Spec Customizer Sliders ──
+      var yarnSlider = document.getElementById('yarn-slider');
+      var spandexSlider = document.getElementById('spandex-slider');
+      var gsmSlider = document.getElementById('gsm-slider');
+
+      function updateSpecs() {
+        var yarnVal = yarnSlider.value + 's/1';
+        var spandexVal = spandexSlider.value + '%';
+        var gsmVal = gsmSlider.value + ' GSM';
+
+        document.getElementById('yarn-value').textContent = yarnVal;
+        document.getElementById('spandex-value').textContent = spandexVal;
+        document.getElementById('gsm-value').textContent = gsmVal;
+
+        document.getElementById('summary-yarn').textContent = yarnVal;
+        document.getElementById('summary-spandex').textContent = spandexVal;
+        document.getElementById('summary-gsm').textContent = gsmSlider.value + 'g';
+      }
+
+      yarnSlider.addEventListener('input', updateSpecs);
+      spandexSlider.addEventListener('input', updateSpecs);
+      gsmSlider.addEventListener('input', updateSpecs);
+
+      // ── Inquiry Form Submission ──
+      var form = document.getElementById('inquiry-form');
+      var submitBtn = document.getElementById('submit-btn');
+      var submitText = document.getElementById('submit-text');
+      var formSuccess = document.getElementById('form-success');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Basic validation
+        var name = document.getElementById('form-name').value.trim();
+        var contact = document.getElementById('form-contact').value.trim();
+
+        if (!name || !contact) {
+          // Highlight empty required fields
+          if (!name) document.getElementById('form-name').style.borderColor = '#EF4444';
+          if (!contact) document.getElementById('form-contact').style.borderColor = '#EF4444';
+          return;
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText.textContent = 'Submitting...';
+
+        // Simulate submission
+        setTimeout(function() {
+          form.style.display = 'none';
+          formSuccess.classList.remove('hidden');
+          formSuccess.classList.add('form-success');
+        }, 1200);
+      });
+
+      // Reset border on input
+      document.querySelectorAll('#inquiry-form input, #inquiry-form select, #inquiry-form textarea').forEach(function(input) {
+        input.addEventListener('focus', function() {
+          this.style.borderColor = '';
+        });
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
